@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        controller.Move(horizMov, false, jump);
+        controller.Move(horizMov, crouch, jump);
         jump = false;
     }
 }
