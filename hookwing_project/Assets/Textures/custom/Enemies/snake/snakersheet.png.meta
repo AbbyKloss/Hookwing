@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 60ceb7f1a14aafc47800cb25cae1dd2d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7138707989261138837
+    second: snakersheet_0
+  - first:
+      213: -8003910396975921241
+    second: snakersheet_1
+  - first:
+      213: 6551547420719706881
+    second: snakersheet_2
+  - first:
+      213: -7506833246672807523
+    second: snakersheet_3
+  - first:
+      213: -7105564609766859611
+    second: snakersheet_4
+  - first:
+      213: 2692989608217280435
+    second: snakersheet_5
+  - first:
+      213: 8478981233664806031
+    second: snakersheet_6
+  - first:
+      213: 7468817946194307233
+    second: snakersheet_7
+  - first:
+      213: 4237380846985945791
+    second: snakersheet_8
+  - first:
+      213: -8025917081213673621
+    second: snakersheet_9
+  - first:
+      213: -3320521208272876243
+    second: snakersheet_10
+  - first:
+      213: 3665710662791679331
+    second: snakersheet_11
+  - first:
+      213: -311438608767074191
+    second: snakersheet_12
+  - first:
+      213: 863685119023254215
+    second: snakersheet_13
+  - first:
+      213: 2398511574356764989
+    second: snakersheet_14
+  - first:
+      213: -4277604491491533231
+    second: snakersheet_15
+  - first:
+      213: 6062584933669133954
+    second: snakersheet_16
+  - first:
+      213: -3632848161726236567
+    second: snakersheet_17
+  - first:
+      213: -1124235341932342170
+    second: snakersheet_18
+  - first:
+      213: -2896129653808070294
+    second: snakersheet_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +92,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +101,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +128,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +161,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: snakersheet_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1088
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b372ff719c11360800000000000000
+      internalID: 7138707989261138837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_1
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1088
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7c13686e56ce090800000000000000
+      internalID: -8003910396975921241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_2
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1088
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103ff15eaa5cbea50800000000000000
+      internalID: 6551547420719706881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_3
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1088
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9999ff5fee52d790800000000000000
+      internalID: -7506833246672807523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 832
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac524262a6f36d90800000000000000
+      internalID: -7105564609766859611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 832
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bffb95d7cb6f5520800000000000000
+      internalID: 2692989608217280435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_6
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 832
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c4bc922846ba570800000000000000
+      internalID: 8478981233664806031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_7
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 832
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a869feb95296a760800000000000000
+      internalID: 7468817946194307233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 576
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb224a20e633eca30800000000000000
+      internalID: 4237380846985945791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_9
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 576
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fd48110f63e9090800000000000000
+      internalID: -8025917081213673621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_10
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 576
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d8ebfcd832be1d0800000000000000
+      internalID: -3320521208272876243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_11
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 576
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d4f011d683fd230800000000000000
+      internalID: 3665710662791679331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170c8134c3c8dabf0800000000000000
+      internalID: -311438608767074191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_13
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 320
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca0c2d2a0d6cfb00800000000000000
+      internalID: 863685119023254215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_14
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 320
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39a23ba199394120800000000000000
+      internalID: 2398511574356764989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_15
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 320
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e1803f065e2a4c0800000000000000
+      internalID: -4277604491491533231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28edbff40e0a22450800000000000000
+      internalID: 6062584933669133954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 64
+        width: 128
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968706538d7859dc0800000000000000
+      internalID: -3632848161726236567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_18
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 64
+        width: 136
+        height: 112
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664de28b9e9e560f0800000000000000
+      internalID: -1124235341932342170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakersheet_19
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 64
+        width: 136
+        height: 112
+      alignment: 9
+      pivot: {x: 0.47058824, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a618b499c61eec7d0800000000000000
+      internalID: -2896129653808070294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
