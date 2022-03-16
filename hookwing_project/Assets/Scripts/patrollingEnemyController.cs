@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SnakeController : MonoBehaviour
+public class patrollingEnemyController : MonoBehaviour
 {
     [SerializeField] private Transform m_GroundCheck;
+    [SerializeField] private Transform m_WallCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
     const float k_GroundedRadius = .2f;
     private bool m_FacingRight = false;
     public float runSpeed = 1f;
     float horizMov = 0f;
     private bool m_Grounded;
+    private bool m_Walled;
     private Rigidbody2D m_Rigidbody2D;
 
     void Start()
@@ -23,6 +25,7 @@ public class SnakeController : MonoBehaviour
     void Update()
     {
 		m_Grounded = false;
+        m_Walled = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -35,6 +38,17 @@ public class SnakeController : MonoBehaviour
 			}
 		}
         if (m_Grounded == false) {
+            Flip();
+        }
+        colliders = Physics2D.OverlapCircleAll(m_WallCheck.position, k_GroundedRadius, m_WhatIsGround);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].gameObject != gameObject)
+			{
+				m_Walled = true;
+			}
+		}
+        if (m_Walled == true) {
             Flip();
         }
 
