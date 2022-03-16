@@ -23,7 +23,7 @@ public class stolen : MonoBehaviour
 	public int kb_force = 2;
 
 	
-	private int jumpNum;
+	public int jumpNum;
 
 	[Header("Events")]
 	[Space]
@@ -136,7 +136,7 @@ public class stolen : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			jumpNum--;
 		}
-		if ((jumpNum <= 0) && m_Grounded) {
+		if ((jumpNum < num_of_jumps) && m_Grounded) {
 			jumpNum = num_of_jumps;
 		}
 	}

@@ -75,10 +75,10 @@ public class grapple : MonoBehaviour
         // it looks like this broke it?
         // i reverted it back to where it was before
 
-        // check = false; 
-        // mouseDistance = Vector3.Distance(mousePos, location);
-        // if(mouseDistance < 10)
-        if(Vector3.Distance(mousePos,location) < 10.6)
+        check = false; 
+        mouseDistance = Vector3.Distance(mousePos, location);
+        if(mouseDistance < 10.6)
+        // if(Vector3.Distance(mousePos,location) < 10.6)
         {
             check = true;
         }
