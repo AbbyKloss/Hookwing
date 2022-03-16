@@ -16,6 +16,7 @@ public class grapple : MonoBehaviour
     private float CharDistance;
     private bool check;
     private Vector3 location;
+    public float mouseDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +72,9 @@ public class grapple : MonoBehaviour
     }
     private void CheckMouse()
     {
-        if(Vector3.Distance(mousePos,location) < 10.6)
+        check = false;
+        mouseDistance = Vector3.Distance(mousePos, location);
+        if(mouseDistance < 10)
         {
             check = true;
         }
