@@ -54,4 +54,11 @@ public class SnakeController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Debug.Log(collision.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+        if (collision.transform.name == "Player") {
+            collision.GetComponent<PlayerHealth>().DamagePlayer(1);
+        }
+    }
 }

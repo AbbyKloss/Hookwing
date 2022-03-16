@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 0b670bf8b0e3fad49b8ac106683664dd
+guid: a29fcc69e785f9e45a0850567b76156e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2816204282519434483
-    second: hook_idle_0
-  - first:
-      213: 3336865522028805439
-    second: hook_idle_1
-  - first:
-      213: 2633579379930138111
-    second: hook_idle_2
-  - first:
-      213: 4197806268910673410
-    second: hook_idle_3
+      213: 5162512804106726736
+    second: BriarH_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,85 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hook_idle_0
+      name: BriarH_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 77
-        width: 34
-        height: 46
-      alignment: 9
-      pivot: {x: 0.5000001, y: 0.43}
+        x: 0
+        y: 7
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0bce7d3025dae8d0800000000000000
-      internalID: -2816204282519434483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hook_idle_1
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 77
-        width: 34
-        height: 44
-      alignment: 9
-      pivot: {x: 0.5, y: 0.44954547}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3d76c7438dee4e20800000000000000
-      internalID: 3336865522028805439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hook_idle_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 13
-        width: 34
-        height: 43
-      alignment: 9
-      pivot: {x: 0.5, y: 0.46}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff587842e7a5c8420800000000000000
-      internalID: 2633579379930138111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hook_idle_3
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 13
-        width: 34
-        height: 44
-      alignment: 9
-      pivot: {x: 0.5, y: 0.44954547}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20e14568f8a914a30800000000000000
-      internalID: 4197806268910673410
+      spriteID: 05def2d0b0ee4a740800000000000000
+      internalID: 5162512804106726736
       vertices: []
       indices: 
       edges: []

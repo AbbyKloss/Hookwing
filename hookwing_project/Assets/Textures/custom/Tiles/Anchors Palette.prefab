@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2864060424531696556}
   - component: {fileID: 5624028438062348778}
   m_Layer: 7
-  m_Name: New Palette
+  m_Name: Anchors Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
