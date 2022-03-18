@@ -7,6 +7,9 @@ public class HealthBar : MonoBehaviour
 {
     public Slider healthBar;
     public PlayerHealth playerHealth;
+    public Text textbox;
+
+    private int curhp, hpmax;
 
     private void Start()
     {
@@ -14,10 +17,16 @@ public class HealthBar : MonoBehaviour
         healthBar = GetComponent<Slider>();
         healthBar.maxValue = playerHealth.maxHealth;
         healthBar.value = playerHealth.maxHealth;
+        textbox.text = "" + healthBar.value + "/" + healthBar.maxValue;
     }
+
+    // void Update() {
+    //     textbox.text = "" + curhp + "/" + hpmax;
+    // }
 
     public void SetHealth(int hp)
     {
         healthBar.value = hp;
+        textbox.text = "" + hp + "/" + healthBar.maxValue;
     }
 }

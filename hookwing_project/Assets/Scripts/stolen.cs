@@ -20,9 +20,10 @@ public class stolen : MonoBehaviour
 	private Vector3 m_Velocity = Vector3.zero;
 
 	public int num_of_jumps = 2;
+	public int kb_force = 2;
 
 	
-	private int jumpNum;
+	public int jumpNum;
 
 	[Header("Events")]
 	[Space]
@@ -131,11 +132,11 @@ public class stolen : MonoBehaviour
 		// If the player should jump...
 		if ((jumpNum > 0) && jump) {
 			m_Grounded = false;
-			m_Rigidbody2D.velocity = new Vector2(0, 0);
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			jumpNum--;
 		}
-		if ((jumpNum <= 0) && m_Grounded) {
+		if ((jumpNum < num_of_jumps) && m_Grounded) {
 			jumpNum = num_of_jumps;
 		}
 	}
@@ -150,5 +151,12 @@ public class stolen : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void Damaged() {
+		float knockback = (m_FacingRight ? -1 : 1) * m_JumpForce * kb_force;
+		m_Rigidbody2D.velocity = new Vector2(0, 0);
+		Vector3 targetVelocity = new Vector2(knockback, m_JumpForce);
+		m_Rigidbody2D.AddForce(targetVelocity);
 	}
 }
