@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     float horizMov = 0f;
     bool jump = false;
     bool crouch = false;
+    bool attack = false;
+    public bool grapple = false;
 
     void Update() {
         horizMov = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -18,10 +20,20 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Jump")) {
             jump = true;
         }
+        if (Input.GetMouseButtonDown(1)) {
+            attack = true;
+        }
+        grapple = ((GetComponent<grapple>().grappled) || (GetComponent<grappleZip>().grappled));
     }
 
     void FixedUpdate() {
-        controller.Move(horizMov, crouch, jump);
+        // string something0 = grapple ? "s0True" : "s0False";
+        // string something1 = GetComponent<grapple>().grappled ? "s1True" : "s1False";
+        // string something2 = GetComponent<grappleZip>().grappled ? "s2True" : "s2False";
+        // Debug.Log(something0 + " " + something1 + " " + something2 + " " + Time.time);
+        controller.Move(horizMov, crouch, jump, attack, grapple);
         jump = false;
+        attack = false;
+        grapple = false;
     }
 }

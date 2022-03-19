@@ -16,8 +16,11 @@ public class stolen : MonoBehaviour
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
-	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	public Animator animator;
+	
+    public LayerMask enemyLayers;
 
 	public int num_of_jumps = 2;
 	public int kb_force = 2;
@@ -67,7 +70,7 @@ public class stolen : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool attack, bool grapple)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -139,6 +142,14 @@ public class stolen : MonoBehaviour
 		if ((jumpNum < num_of_jumps) && m_Grounded) {
 			jumpNum = num_of_jumps;
 		}
+
+		if (attack) {
+			GetComponent<PlayerAttack>().Attack();
+		}
+
+		if (grapple) {
+			animator.SetTrigger("Grapple");
+		}
 	}
 
 
@@ -160,3 +171,4 @@ public class stolen : MonoBehaviour
 		m_Rigidbody2D.AddForce(targetVelocity);
 	}
 }
+	

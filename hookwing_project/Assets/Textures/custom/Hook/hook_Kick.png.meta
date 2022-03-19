@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7037c8a938ad432468a88f37626b8c6d
+guid: d9cd2d50df43bcf48b590d9de99f3bd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4523564076701763686
-    second: hook_grapple_0
+      213: 2988966735231572091
+    second: hook_Kick_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -47,8 +47,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.4375}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -118,22 +118,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hook_grapple_0
+      name: hook_Kick_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 13
-        width: 39
-        height: 46
+        x: 16
+        y: 8
+        width: 30
+        height: 47
       alignment: 9
-      pivot: {x: 0.51282054, y: 0.43478262}
+      pivot: {x: 0.5, y: 0.4255319}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a97397960721931c0800000000000000
-      internalID: -4523564076701763686
+      spriteID: b78dfe2d861fa7920800000000000000
+      internalID: 2988966735231572091
       vertices: []
       indices: 
       edges: []

@@ -10,4 +10,8 @@ public class angryTerrain : MonoBehaviour
             collision.GetComponent<PlayerHealth>().DamagePlayer(1);
         }
     }
+
+    public void takeDamage(int damage) {
+        return;
+    }
 }

@@ -20,18 +20,25 @@ public class grappleZip : MonoBehaviour
     private float time = 0f;
     public float totalTime = 10f;
     private bool zip;
+    public bool grappled;
+
+    public float xOffset;
+    public float yOffset;
     
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
 
-
         lineRenderer = GetComponent<LineRenderer>();
         RigidBody = GetComponent<Rigidbody2D>();
         distanceJoint = GetComponent<DistanceJoint2D>();
         distanceJoint.enabled = false;
         lineRenderer.positionCount = 0;
+
+        grappled = false;
+        xOffset = 1.15f;
+        yOffset = 0f;
     }
 
     // Update is called once per frame
@@ -44,6 +51,7 @@ public class grappleZip : MonoBehaviour
        
         if (Input.GetMouseButtonDown(0) && check)
         {
+            grappled = true;
             direction = closest.position - PlayerPos;
             direction.Normalize();
             zip = true;
@@ -58,6 +66,7 @@ public class grappleZip : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0))
         {
+            grappled = false;
             lineRenderer.positionCount = 0;
         }
        
@@ -66,6 +75,8 @@ public class grappleZip : MonoBehaviour
     private void DrawLine()
     {
         if (lineRenderer.positionCount <= 0) return;
+        bool facingRight = GetComponent<stolen>().m_FacingRight;
+        Vector3 temp = transform.position + new Vector3((facingRight ? 1 : -1) * xOffset, yOffset);
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, closest.position);
     }

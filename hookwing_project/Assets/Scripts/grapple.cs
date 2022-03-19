@@ -23,36 +23,38 @@ public class grapple : MonoBehaviour
     private bool check;
     public Transform closest;
     private bool drawCheck;
+    public bool grappled;
+
+    public float xOffset;
+    public float yOffset;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-
-
         camera = Camera.main;
-        
        
         lineRenderer = GetComponent<LineRenderer>();
         RigidBody = GetComponent<Rigidbody2D>();
         distanceJoint = GetComponent<DistanceJoint2D>();
         distanceJoint.enabled = false;
         lineRenderer.positionCount = 0;
+
+        grappled = false;
+        xOffset = 1.15f;
+        yOffset = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleSwing"));
         GetMousePos();
         DistanceCheck();
        
         if (Input.GetMouseButtonDown(0) && check)
         {
-
+            grappled = true;
 
              distanceJoint.enabled = true;
              distanceJoint.connectedAnchor = closest.position;
@@ -63,9 +65,10 @@ public class grapple : MonoBehaviour
             
         if (Input.GetMouseButtonUp(0))
         {
-             distanceJoint.enabled = false;
+            grappled = false;
+            distanceJoint.enabled = false;
 
-             lineRenderer.positionCount = 0;
+            lineRenderer.positionCount = 0;
 
         }
         DrawCheck();
@@ -77,7 +80,9 @@ public class grapple : MonoBehaviour
     private void DrawLine()
     {
         if (lineRenderer.positionCount <= 0) return;
-        lineRenderer.SetPosition(0, transform.position);
+        bool facingRight = GetComponent<stolen>().m_FacingRight;
+        Vector3 temp = transform.position + new Vector3((facingRight ? 1 : -1) * xOffset, yOffset);
+        lineRenderer.SetPosition(0, temp);
         lineRenderer.SetPosition(1, distanceJoint.connectedAnchor);
     }
     private void GetMousePos()

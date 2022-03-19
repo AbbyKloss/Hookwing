@@ -15,10 +15,24 @@ public class patrollingEnemyController : MonoBehaviour
     private bool m_Grounded;
     private bool m_Walled;
     private Rigidbody2D m_Rigidbody2D;
+    public Animator animator;
+
+    public int maxHealth = 1;
+    private int curHealth;
+
+    public float m_JumpForce = 500f;
+    public float kb_force = 4f;
+    public float deathTime = 1.5f;
+
+
+    void Awake() {
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
     void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        curHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -74,5 +88,32 @@ public class patrollingEnemyController : MonoBehaviour
         if (collision.transform.name == "Player") {
             collision.GetComponent<PlayerHealth>().DamagePlayer(1);
         }
+    }
+
+    public void takeDamage(int damage) {
+        curHealth -= damage;
+        Damaged();
+        if (curHealth <= 0) { 
+            Die();
+        }
+    }
+
+    public void Damaged() {
+		float knockback = (m_FacingRight ? -1 : 1) * m_JumpForce * kb_force;
+		m_Rigidbody2D.velocity = new Vector2(0, 0);
+		Vector3 targetVelocity = new Vector2(knockback, m_JumpForce);
+		m_Rigidbody2D.AddForce(targetVelocity);
+	}
+
+    private void Die() {
+        Debug.Log(name + " Died.");
+        animator.SetTrigger("Dead");
+        runSpeed = 1f;
+
+        GetComponent<Collider2D>().enabled = false;
+        // float curTime = Time.time;
+        // while (curTime + deathTime < Time.time) {}
+        Destroy(gameObject, deathTime);
+        this.enabled = false;
     }
 }
