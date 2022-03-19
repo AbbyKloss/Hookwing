@@ -3839,8 +3839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDistance: 0
   MouseDistance: 0
-  force: 500
-  totalTime: 5
+  force: 2500
+  totalTime: 10
 --- !u!1 &1738138009
 GameObject:
   m_ObjectHideFlags: 0
