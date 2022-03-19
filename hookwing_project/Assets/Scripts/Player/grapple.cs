@@ -54,7 +54,7 @@ public class grapple : MonoBehaviour
         closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleSwing"));
         GetMousePos();
         DistanceCheck();
-       
+        
         if (Input.GetMouseButtonDown(0) && (!paused) && check)
         {
             grappled = true;
@@ -63,7 +63,7 @@ public class grapple : MonoBehaviour
              distanceJoint.connectedAnchor = closest.position;
              lineRenderer.positionCount = 2;
 
-                
+            
         }
             
         if (Input.GetMouseButtonUp(0))
@@ -74,10 +74,9 @@ public class grapple : MonoBehaviour
             lineRenderer.positionCount = 0;
 
         }
-        DrawCheck();
-        if(drawCheck)
-            DrawLine();
-        
+        DrawLine();
+
+
 
     }
     private void DrawLine()

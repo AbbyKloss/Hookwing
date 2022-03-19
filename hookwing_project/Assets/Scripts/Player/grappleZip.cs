@@ -12,13 +12,14 @@ public class grappleZip : MonoBehaviour
     private Vector3 PlayerPos;
     private Vector3 mousePos;
     private Transform closest;
+    private Transform tempClosest;
     public float PlayerDistance;
     public float MouseDistance;
     private bool check;
     private Vector3 direction;
-    public float force = 2500f;
+    public float force = 20f;
     private float time = 0f;
-    public float totalTime = 10f;
+    public float totalTime = 2f;
     private bool zip;
     public bool grappled;
 
@@ -26,7 +27,8 @@ public class grappleZip : MonoBehaviour
     public float yOffset;
     public GameObject canvas;
     private bool paused;
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,42 +48,53 @@ public class grappleZip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         paused = (canvas.GetComponent<PauseMenu>().pubPaused || canvas.GetComponent<DeathMenu>().pubPaused);
         closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleZip"));
+
         GetMousePos();
         DistanceCheck();
-        
+        float step = force * Time.deltaTime;
        
         if (Input.GetMouseButtonDown(0) && (!paused) && check)
         {
+            tempClosest = closest;
             grappled = true;
             direction = closest.position - PlayerPos;
             direction.Normalize();
             zip = true;
-            AddForceOverTime();
+
+            RigidBody.velocity = Vector3.zero;
+            RigidBody.angularVelocity = 0;
+
+            
 
             lineRenderer.positionCount = 2;
 
-            DrawLine();
+            
 
+
+        }
+        
+        if(Input.GetMouseButtonUp(0))
+        {
+            lineRenderer.positionCount = 0;
+            grappled = false;
             
         }
         
-        if (Input.GetMouseButtonUp(0))
-        {
-            grappled = false;
-            lineRenderer.positionCount = 0;
-        }
-       
-
+        AddForceOverTime();
+        
+        
     }
     private void DrawLine()
     {
+        
         if (lineRenderer.positionCount <= 0) return;
         bool facingRight = GetComponent<stolen>().m_FacingRight;
         Vector3 temp = transform.position + new Vector3((facingRight ? 1 : -1) * xOffset, yOffset);
-        lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, closest.position);
+        lineRenderer.SetPosition(0, temp);
+        lineRenderer.SetPosition(1, tempClosest.position);
     }
     private void GetMousePos()
     {
@@ -94,7 +107,7 @@ public class grappleZip : MonoBehaviour
         PlayerPos = transform.position;
         foreach (GameObject grapplePoint in grapplePoints)
         {
-            float dist = Vector3.Distance(grapplePoint.transform.position, mousePos);
+            float dist = Vector3.Distance(grapplePoint.transform.position,mousePos);
             if (dist < closestDistance)
             {
                 closest = grapplePoint.transform;
@@ -104,6 +117,7 @@ public class grappleZip : MonoBehaviour
 
         return closest;
     }
+    
     private void DistanceCheck()
     {
         check = false;
@@ -117,21 +131,24 @@ public class grappleZip : MonoBehaviour
     {
         if(zip)
         {
+            
             lineRenderer.positionCount = 2;
             time += Time.fixedDeltaTime;
             if(time < totalTime)
             {
+                
                 RigidBody.AddForce(direction * force);
-                
-                
+
             }
-                
             else
             {
                 time = 0;
                 zip = false;
-                
+                lineRenderer.positionCount = 0;
             }
+
+            DrawLine();
+
         }
         
         
