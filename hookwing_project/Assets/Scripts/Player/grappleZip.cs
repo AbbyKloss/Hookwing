@@ -24,6 +24,8 @@ public class grappleZip : MonoBehaviour
 
     public float xOffset;
     public float yOffset;
+    public GameObject canvas;
+    private bool paused;
     
     // Start is called before the first frame update
     void Start()
@@ -44,12 +46,13 @@ public class grappleZip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        paused = (canvas.GetComponent<PauseMenu>().pubPaused || canvas.GetComponent<DeathMenu>().pubPaused);
         closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleZip"));
         GetMousePos();
         DistanceCheck();
         
        
-        if (Input.GetMouseButtonDown(0) && check)
+        if (Input.GetMouseButtonDown(0) && (!paused) && check)
         {
             grappled = true;
             direction = closest.position - PlayerPos;

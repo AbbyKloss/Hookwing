@@ -21,7 +21,7 @@ public class stolen : MonoBehaviour
 	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 	public Animator animator;
-	
+	public GameObject deathMenu;
     public LayerMask enemyLayers;
 
 	public int num_of_jumps = 2;
@@ -33,28 +33,18 @@ public class stolen : MonoBehaviour
 	[Header("Events")]
 	[Space]
 
-	public UnityEvent OnLandEvent;
-
-	[System.Serializable]
-	public class BoolEvent : UnityEvent<bool> { }
-
-	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 	private bool isDead = false;
+	public bool playerDead;
 
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
-		if (OnLandEvent == null)
-			OnLandEvent = new UnityEvent();
-
-		if (OnCrouchEvent == null)
-			OnCrouchEvent = new BoolEvent();
 	}
 
 	private void FixedUpdate()
 	{
+		playerDead = isDead;
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
@@ -66,8 +56,6 @@ public class stolen : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
-				if (!wasGrounded)
-					OnLandEvent.Invoke();
 			}
 		}
 	}
@@ -96,7 +84,6 @@ public class stolen : MonoBehaviour
 				if (!m_wasCrouching)
 				{
 					m_wasCrouching = true;
-					OnCrouchEvent.Invoke(true);
 				}
 
 				// Reduce the speed by the crouchSpeed multiplier
@@ -114,7 +101,6 @@ public class stolen : MonoBehaviour
 				if (m_wasCrouching)
 				{
 					m_wasCrouching = false;
-					OnCrouchEvent.Invoke(false);
 				}
 			}
 
@@ -182,19 +168,16 @@ public class stolen : MonoBehaviour
 		float dietime = 0.1f;
 		GameObject.FindWithTag("Player").transform.rotation = Quaternion.Euler(Vector3.forward * (m_FacingRight ? 1 : -1) * 90);
 		StartCoroutine(StopFlying(dietime));
-		StartCoroutine(RestartLevel());
-
+		StartCoroutine(DeathMenu());
     }
 
 	IEnumerator StopFlying(float time) {
 		yield return new WaitForSeconds(time);
 		m_Rigidbody2D.velocity = new Vector2(0, m_Rigidbody2D.velocity.y);
-		Debug.Log("Stopped flying");
 	}
-
-	IEnumerator RestartLevel() {
-		yield return new WaitForSeconds(3);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	IEnumerator DeathMenu() {
+		yield return new WaitForSeconds(0.75f);
+		deathMenu.GetComponent<DeathMenu>().Arise();
 	}
 }
 	
