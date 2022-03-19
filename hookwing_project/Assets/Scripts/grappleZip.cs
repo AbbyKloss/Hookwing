@@ -16,7 +16,10 @@ public class grappleZip : MonoBehaviour
     public float MouseDistance;
     private bool check;
     private Vector3 direction;
-    public float force = 20f;
+    public float force = 500f;
+    private float time = 0f;
+    public float totalTime = 5f;
+    private bool zip;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,17 +40,19 @@ public class grappleZip : MonoBehaviour
         GetMousePos();
         DistanceCheck();
         
-        direction = closest.position - PlayerPos;
-            if (Input.GetMouseButton(0) && check)
-            {
+       
+        if (Input.GetMouseButtonDown(0) && check)
+        {
+            direction = closest.position - PlayerPos;
+            zip = true;
+            AddForceOverTime();
+            lineRenderer.positionCount = 2;
 
-                lineRenderer.positionCount = 2;
-                RigidBody.AddForce(direction * force);
-                DrawLine();
+            DrawLine();
 
 
-
-            }
+        }
+        
         if (Input.GetMouseButtonUp(0))
         {
             lineRenderer.positionCount = 0;
@@ -87,9 +92,23 @@ public class grappleZip : MonoBehaviour
         check = false;
         PlayerDistance = Vector3.Distance(PlayerPos, closest.position);
         MouseDistance = Vector3.Distance(mousePos, closest.position);
-        if (PlayerDistance < 10 && MouseDistance < 10)
+        if (PlayerDistance < 8 && MouseDistance < 10)
             check = true;
        
     }
-   
+    private void AddForceOverTime()
+    {
+        if(zip)
+        {
+            time += Time.fixedDeltaTime;
+            if(time < totalTime)
+                RigidBody.AddForce(direction * force);
+            else
+            {
+                time = 0;
+                zip = false;
+            }
+        }
+        
+    }
 }

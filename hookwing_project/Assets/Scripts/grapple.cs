@@ -23,6 +23,7 @@ public class grapple : MonoBehaviour
     private bool check;
     public Transform closest;
     private bool drawCheck;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -77,7 +78,7 @@ public class grapple : MonoBehaviour
     {
         if (lineRenderer.positionCount <= 0) return;
         lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, closest.position);
+        lineRenderer.SetPosition(1, distanceJoint.connectedAnchor);
     }
     private void GetMousePos()
     {
