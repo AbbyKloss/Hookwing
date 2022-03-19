@@ -16,7 +16,7 @@ public class grappleZip : MonoBehaviour
     public float MouseDistance;
     private bool check;
     private Vector3 direction;
-    private float force = 20f;
+    private float force = 40f;
     // Start is called before the first frame update
     void Start()
     {
