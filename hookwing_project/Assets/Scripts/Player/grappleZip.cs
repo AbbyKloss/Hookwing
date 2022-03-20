@@ -29,6 +29,7 @@ public class grappleZip : MonoBehaviour
     private bool paused;
 
     public float messing = 1f;
+    public bool canGrapple = true;
 
 
     // Start is called before the first frame update
@@ -50,6 +51,7 @@ public class grappleZip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canGrapple) return;
         
         paused = (canvas.GetComponent<PauseMenu>().pubPaused || canvas.GetComponent<DeathMenu>().pubPaused);
         closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleZip"));

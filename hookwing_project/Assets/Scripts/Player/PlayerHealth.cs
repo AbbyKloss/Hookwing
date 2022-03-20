@@ -9,9 +9,6 @@ public class PlayerHealth : MonoBehaviour {
     private float invulnTime = 2f; // seconds
     public float curTime;
     public bool invuln;
-
-    public HealthBar healthBar;
-
     private SpriteRenderer sr;
     
     void Start()
@@ -43,7 +40,6 @@ public class PlayerHealth : MonoBehaviour {
 
             curHealth -= damage;
 
-            healthBar.SetHealth(curHealth);
             GetComponent<stolen>().Damaged();
             invuln = true;
             if (curHealth <= 0) {
@@ -51,6 +47,10 @@ public class PlayerHealth : MonoBehaviour {
             }
             else StartCoroutine(Flashies());
         }
+    }
+
+    public void HealPlayer(int healing) {
+        curHealth += healing;
     }
 
     IEnumerator Flashies() {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class egg : MonoBehaviour
+public class goalEgg : MonoBehaviour
 {
     private int currentScene;
     private int totalScenes;

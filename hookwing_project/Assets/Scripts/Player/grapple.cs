@@ -29,6 +29,8 @@ public class grapple : MonoBehaviour
     public float yOffset;
     public GameObject canvas;
     private bool paused;
+
+    public bool canGrapple = true;
     
 
     // Start is called before the first frame update
@@ -50,6 +52,7 @@ public class grapple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canGrapple) return;
         paused = (canvas.GetComponent<PauseMenu>().pubPaused || canvas.GetComponent<DeathMenu>().pubPaused);
         closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleSwing"));
         GetMousePos();
