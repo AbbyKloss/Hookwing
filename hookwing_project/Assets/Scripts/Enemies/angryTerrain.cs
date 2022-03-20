@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class angryTerrain : MonoBehaviour
 {
+
+    public int damageDealt = 1;
     private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log(collision.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         if (collision.transform.name == "Player") {
-            collision.GetComponent<PlayerHealth>().DamagePlayer(1);
+            collision.GetComponent<PlayerHealth>().DamagePlayer(damageDealt);
         }
     }
 

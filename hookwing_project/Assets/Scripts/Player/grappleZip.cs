@@ -28,6 +28,8 @@ public class grappleZip : MonoBehaviour
     public GameObject canvas;
     private bool paused;
 
+    public float messing = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,26 +69,22 @@ public class grappleZip : MonoBehaviour
             RigidBody.velocity = Vector3.zero;
             RigidBody.angularVelocity = 0;
 
-            
-
             lineRenderer.positionCount = 2;
-
-            
-
-
         }
         
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0) || (Vector3.Distance(RigidBody.position, closest.position) < messing))
         {
             lineRenderer.positionCount = 0;
             grappled = false;
-            
+            zip = false;
+            time = 0;            
         }
         
         AddForceOverTime();
         
         
     }
+
     private void DrawLine()
     {
         
@@ -96,10 +94,12 @@ public class grappleZip : MonoBehaviour
         lineRenderer.SetPosition(0, temp);
         lineRenderer.SetPosition(1, tempClosest.position);
     }
+
     private void GetMousePos()
     {
         mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
     }
+
     Transform GetClosestGrapple(GameObject[] grapplePoints)
     {
         Transform closest = null;
@@ -127,6 +127,7 @@ public class grappleZip : MonoBehaviour
             check = true;
        
     }
+    
     private void AddForceOverTime()
     {
         if(zip)
@@ -136,13 +137,15 @@ public class grappleZip : MonoBehaviour
             time += Time.fixedDeltaTime;
             if(time < totalTime)
             {
-                
+                // RigidBody.velocity = Vector3.zero;
+                direction = closest.position - PlayerPos;
+                direction.Normalize();
                 RigidBody.AddForce(direction * force);
-
             }
             else
             {
                 time = 0;
+                grappled = false;
                 zip = false;
                 lineRenderer.positionCount = 0;
             }
@@ -152,6 +155,13 @@ public class grappleZip : MonoBehaviour
         }
         
         
+    }
+
+    void OnDrawGizmosSelected() {
+        if (closest == null) return;
+        Gizmos.DrawWireSphere(closest.position, 10);
+        Gizmos.DrawWireSphere(closest.position, messing/2);
+        Gizmos.DrawWireSphere(RigidBody.position, messing/2);
     }
 
 }

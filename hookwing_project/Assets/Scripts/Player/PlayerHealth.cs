@@ -6,17 +6,20 @@ public class PlayerHealth : MonoBehaviour {
 
     public int curHealth = 0;
     public int maxHealth = 3;
-    public float invulnTime = 3f; // seconds
+    private float invulnTime = 2f; // seconds
     public float curTime;
     public bool invuln;
 
     public HealthBar healthBar;
+
+    private SpriteRenderer sr;
     
     void Start()
     {
         curHealth = maxHealth;
         curTime = 0f;
         invuln = false;
+        sr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,18 @@ public class PlayerHealth : MonoBehaviour {
             invuln = true;
             if (curHealth <= 0) {
                 GetComponent<stolen>().Die();
+            }
+            else StartCoroutine(Flashies());
+        }
+    }
+
+    IEnumerator Flashies() {
+        for (int i = 0; i < 6; ++i) {
+            sr.enabled = !sr.enabled;
+            yield return new WaitForSeconds(invulnTime/6);
+            if (curHealth <= 0) {
+                sr.enabled = true;
+                break;
             }
         }
     }

@@ -59,11 +59,9 @@ public class grapple : MonoBehaviour
         {
             grappled = true;
 
-             distanceJoint.enabled = true;
-             distanceJoint.connectedAnchor = closest.position;
-             lineRenderer.positionCount = 2;
-
-            
+            distanceJoint.enabled = true;
+            distanceJoint.connectedAnchor = closest.position;
+            lineRenderer.positionCount = 2;
         }
             
         if (Input.GetMouseButtonUp(0))
@@ -72,13 +70,10 @@ public class grapple : MonoBehaviour
             distanceJoint.enabled = false;
 
             lineRenderer.positionCount = 0;
-
         }
         DrawLine();
-
-
-
     }
+
     private void DrawLine()
     {
         if (lineRenderer.positionCount <= 0) return;
@@ -87,10 +82,12 @@ public class grapple : MonoBehaviour
         lineRenderer.SetPosition(0, temp);
         lineRenderer.SetPosition(1, distanceJoint.connectedAnchor);
     }
+
     private void GetMousePos()
     {
         mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
     }
+
     Transform GetClosestGrapple(GameObject[] grapplePoints)
     {
         Transform closest = null;
@@ -115,7 +112,6 @@ public class grapple : MonoBehaviour
         MouseDistance = Vector3.Distance(mousePos, closest.position);
         if (PlayerDistance < 10 && MouseDistance < 10)
             check = true;
-        else check = false;
     }
     private void DrawCheck()
     {
