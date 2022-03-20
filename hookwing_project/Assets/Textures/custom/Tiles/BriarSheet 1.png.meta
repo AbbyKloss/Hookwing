@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: a489fb30f1dc52145accfdc665d8a6fd
+guid: 64a7db2f1d4e1884486dd0ad4be65f9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7059343197404670723
-    second: AcornEnemy1_0
+      213: 33173276913442137
+    second: BriarSheet 1_0
+  - first:
+      213: 2579531449530441760
+    second: BriarSheet 1_1
+  - first:
+      213: 7243950153357899302
+    second: BriarSheet 1_2
+  - first:
+      213: -124937233407917625
+    second: BriarSheet 1_3
+  - first:
+      213: -755169050060350425
+    second: BriarSheet 1_4
+  - first:
+      213: 5800757650982030757
+    second: BriarSheet 1_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AcornEnemy1_0
+      name: BriarSheet 1_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 2
-        width: 24
-        height: 30
+        x: 0
+        y: 33
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +147,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df4df1393cc280e90800000000000000
-      internalID: -7059343197404670723
+      spriteID: 95d167a6bead57000800000000000000
+      internalID: 33173276913442137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BriarSheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020e538bf265cc320800000000000000
+      internalID: 2579531449530441760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BriarSheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626b88dc84ea78460800000000000000
+      internalID: 7243950153357899302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BriarSheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c140878f32244ef0800000000000000
+      internalID: -124937233407917625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BriarSheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c98c100c91585f0800000000000000
+      internalID: -755169050060350425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BriarSheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5adc9ee895e608050800000000000000
+      internalID: 5800757650982030757
       vertices: []
       indices: 
       edges: []

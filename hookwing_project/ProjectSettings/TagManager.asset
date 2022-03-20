@@ -15,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Background
-  - Anchors
+  - backgroundSprites
   - grapple
   - Enemies
   - 
@@ -41,7 +41,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: background
+  - name: Background
     uniqueID: 853981191
     locked: 0
   - name: backgroundSprites
