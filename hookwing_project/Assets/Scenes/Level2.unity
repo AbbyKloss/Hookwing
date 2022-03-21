@@ -16165,7 +16165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDistance: 0
   MouseDistance: 0
-  force: 50
+  force: 350
   totalTime: 1
   grappled: 0
   xOffset: 2
