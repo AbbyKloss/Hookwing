@@ -12,15 +12,26 @@ public class PlayerMovement : MonoBehaviour {
     bool crouch = false;
     bool attack = false;
     public bool grapple = false;
+    public GameObject SoundGuy;
+    public audio AC;
+
+    void Start()
+    {
+        SoundGuy = GameObject.Find("SoundGuy");
+        AC = SoundGuy.GetComponent<audio>();
+    }
+   
 
     void Update() {
         horizMov = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Mathf.Abs(horizMov));
         // vertiMov = Input.GetAxisRaw("Vertical");
         if (Input.GetButtonDown("Jump")) {
+            AC.PlaySound("JumpSound");
             jump = true;
         }
         if (Input.GetMouseButtonDown(1)) {
+            AC.PlaySound("KickSound");
             attack = true;
         }
         grapple = ((GetComponent<grapple>().grappled) || (GetComponent<grappleZip>().grappled));

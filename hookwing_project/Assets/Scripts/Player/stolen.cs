@@ -34,6 +34,7 @@ public class stolen : MonoBehaviour
 
 	
 	public int jumpNum;
+	
 
 	[Header("Events")]
 	[Space]
@@ -139,6 +140,7 @@ public class stolen : MonoBehaviour
 		}
 		// If the player should jump...
 		if ((jumpNum > 0) && jump) {
+			
 			m_Grounded = false;
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

@@ -10,13 +10,19 @@ public class PlayerHealth : MonoBehaviour {
     public float curTime;
     public bool invuln;
     private SpriteRenderer sr;
-    
+
+    public GameObject SoundGuy;
+    public audio AC;
+
     void Start()
     {
         curHealth = maxHealth;
         curTime = 0f;
         invuln = false;
         sr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+
+        SoundGuy = GameObject.Find("SoundGuy");
+        AC = SoundGuy.GetComponent<audio>();
     }
 
     // Update is called once per frame
@@ -36,6 +42,7 @@ public class PlayerHealth : MonoBehaviour {
     public void DamagePlayer(int damage, bool passInvuln = true) {
         if (!invuln || !passInvuln) {
             // Debug.Log("Took damage at: " + Time.time);
+            AC.PlaySound("birdhurt");
             curTime = Time.time;
 
             curHealth -= damage;

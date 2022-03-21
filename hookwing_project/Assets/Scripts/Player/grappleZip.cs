@@ -32,6 +32,9 @@ public class grappleZip : MonoBehaviour
     public bool canGrapple = true;
     private GameObject[] grapplePoints;
 
+    public GameObject SoundGuy;
+    public audio AC;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +51,9 @@ public class grappleZip : MonoBehaviour
         grappled = false;
         xOffset = 2f;
         yOffset = 0.55f;
+
+        SoundGuy = GameObject.Find("SoundGuy");
+        AC = SoundGuy.GetComponent<audio>();
     }
 
     // Update is called once per frame
@@ -64,6 +70,7 @@ public class grappleZip : MonoBehaviour
        
         if (Input.GetMouseButtonDown(0) && (!paused) && check)
         {
+            AC.PlaySound("spidertech");
             tempClosest = closest;
             grappled = true;
             direction = closest.position - PlayerPos;
