@@ -31,12 +31,14 @@ public class grapple : MonoBehaviour
     private bool paused;
 
     public bool canGrapple = true;
+    private GameObject[] grapplePoints;
     
 
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
+        grapplePoints= GameObject.FindGameObjectsWithTag("grappleSwing");
        
         lineRenderer = GetComponent<LineRenderer>();
         RigidBody = GetComponent<Rigidbody2D>();
@@ -45,8 +47,8 @@ public class grapple : MonoBehaviour
         lineRenderer.positionCount = 0;
 
         grappled = false;
-        xOffset = 1.15f;
-        yOffset = 0f;
+        xOffset = 2f;
+        yOffset = 0.55f;
     }
 
     // Update is called once per frame
@@ -54,7 +56,7 @@ public class grapple : MonoBehaviour
     {
         if (!canGrapple) return;
         paused = (canvas.GetComponent<PauseMenu>().pubPaused || canvas.GetComponent<DeathMenu>().pubPaused);
-        closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleSwing"));
+        closest = GetClosestGrapple(grapplePoints);
         GetMousePos();
         DistanceCheck();
         
@@ -121,5 +123,12 @@ public class grapple : MonoBehaviour
         drawCheck = false;
         if (PlayerDistance < 10)
             drawCheck = true;
+    }
+
+    void OnDrawGizmosSelected() {
+        if (closest == null) return;
+        Gizmos.DrawWireSphere(closest.position, 10);
+        // Gizmos.DrawWireSphere(closest.position, messing/2);
+        // Gizmos.DrawWireSphere(RigidBody.position, messing/2);
     }
 }

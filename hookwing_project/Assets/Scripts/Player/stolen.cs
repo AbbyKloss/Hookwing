@@ -162,6 +162,7 @@ public class stolen : MonoBehaviour
 		if (grapple) {			
 			animator.SetTrigger("Grapple");
 		}
+		// else animator.SetBool("Grapple", false);
 	}
 
 

@@ -30,12 +30,14 @@ public class grappleZip : MonoBehaviour
 
     public float messing = 1f;
     public bool canGrapple = true;
+    private GameObject[] grapplePoints;
 
 
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
+        grapplePoints = GameObject.FindGameObjectsWithTag("grappleZip");
 
         lineRenderer = GetComponent<LineRenderer>();
         RigidBody = GetComponent<Rigidbody2D>();
@@ -44,8 +46,8 @@ public class grappleZip : MonoBehaviour
         lineRenderer.positionCount = 0;
 
         grappled = false;
-        xOffset = 1.15f;
-        yOffset = 0f;
+        xOffset = 2f;
+        yOffset = 0.55f;
     }
 
     // Update is called once per frame
@@ -54,7 +56,7 @@ public class grappleZip : MonoBehaviour
         if (!canGrapple) return;
         
         paused = (canvas.GetComponent<PauseMenu>().pubPaused || canvas.GetComponent<DeathMenu>().pubPaused);
-        closest = GetClosestGrapple(GameObject.FindGameObjectsWithTag("grappleZip"));
+        closest = GetClosestGrapple(grapplePoints);
 
         GetMousePos();
         DistanceCheck();

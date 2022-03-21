@@ -5473,7 +5473,6 @@ MonoBehaviour:
   maxHealth: 3
   curTime: 0
   invuln: 0
-  healthBar: {fileID: 779676337}
 --- !u!95 &1714591921
 Animator:
   serializedVersion: 3
@@ -5512,6 +5511,7 @@ MonoBehaviour:
   xOffset: 1.15
   yOffset: 0
   canvas: {fileID: 1512636019}
+  canGrapple: 1
 --- !u!232 &1714591923
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -5594,8 +5594,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.6039216, g: 0.38823533, b: 0.28235295, a: 1}
-      key1: {r: 0.6039216, g: 0.38823533, b: 0.28235295, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5718,6 +5718,7 @@ MonoBehaviour:
   yOffset: 0
   canvas: {fileID: 1512636019}
   messing: 1
+  canGrapple: 1
 --- !u!114 &1714591929
 MonoBehaviour:
   m_ObjectHideFlags: 0

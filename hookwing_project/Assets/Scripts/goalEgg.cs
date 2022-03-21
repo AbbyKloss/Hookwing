@@ -16,7 +16,7 @@ public class goalEgg : MonoBehaviour
         Debug.Log(nextScene);
     }
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.transform.name == "Player") {
+        if (collision.transform.tag == "Player") {
             SceneManager.LoadScene(nextScene);
         }
     }
