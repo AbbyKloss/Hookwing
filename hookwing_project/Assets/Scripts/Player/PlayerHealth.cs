@@ -33,8 +33,8 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
-    public void DamagePlayer(int damage) {
-        if (!invuln) {
+    public void DamagePlayer(int damage, bool passInvuln = true) {
+        if (!invuln || !passInvuln) {
             // Debug.Log("Took damage at: " + Time.time);
             curTime = Time.time;
 
@@ -50,7 +50,11 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     public void HealPlayer(int healing) {
-        curHealth += healing;
+        int temp = curHealth + healing;
+        if (temp + curHealth >= maxHealth)
+            curHealth = maxHealth;
+        else
+            curHealth += healing;
     }
 
     IEnumerator Flashies() {
