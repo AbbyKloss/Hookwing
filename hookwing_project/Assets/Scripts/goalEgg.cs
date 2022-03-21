@@ -13,7 +13,7 @@ public class goalEgg : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex;
         totalScenes = SceneManager.sceneCountInBuildSettings;
         nextScene = (currentScene + 1) % totalScenes;
-        Debug.Log(nextScene);
+        // Debug.Log(nextScene);
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.transform.tag == "Player") {
