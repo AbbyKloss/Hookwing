@@ -27289,7 +27289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDistance: 0
   MouseDistance: 0
-  force: 100
+  force: 75
   totalTime: 1
   grappled: 0
   xOffset: 1.15
