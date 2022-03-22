@@ -21077,7 +21077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 1
-  invuln: 0
+  invuln: 1
 --- !u!114 &475231414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54070,7 +54070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 1
-  invuln: 0
+  invuln: 1
 --- !u!114 &2132471613
 MonoBehaviour:
   m_ObjectHideFlags: 0
