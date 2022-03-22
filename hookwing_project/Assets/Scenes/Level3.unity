@@ -22214,7 +22214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727ecad89f4729c409a17dd904a78824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 3
+  damageDealt: 1
   invuln: 1
 --- !u!1 &541049167
 GameObject:
